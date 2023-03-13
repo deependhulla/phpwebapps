@@ -2,11 +2,11 @@
 
 ## for Development of checking Database in details.
 
-wget -c "https://files.phpmyadmin.net/phpMyAdmin/5.2.0/phpMyAdmin-5.2.0-english.tar.gz" -O /tmp/phpMyAdmin-5.2.0-english.tar.gz
+wget -c "https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-english.tar.gz" -O /tmp/phpMyAdmin-5.2.1-english.tar.gz
 cd /tmp
-tar -xvzf phpMyAdmin-5.2.0-english.tar.gz 
+tar -xvzf phpMyAdmin-5.2.1-english.tar.gz 
 cd -
-mv -v /tmp/phpMyAdmin-5.2.0-english /var/www/html/dbadminonweb
+mv -v /tmp/phpMyAdmin-5.2.1-english /var/www/html/dbadminonweb
 
 cp /var/www/html/dbadminonweb/config.sample.inc.php /var/www/html/dbadminonweb/config.inc.php
 

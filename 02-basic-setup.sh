@@ -98,12 +98,11 @@ a2enmod headers > /dev/null 2>&1
 a2enmod proxy_http > /dev/null 2>&1
 
 systemctl stop apache2
+systemctl stop php8.2-fpm.service > /dev/null 2>&1
 ## usefull for nginx imap & smtp proxy  --also with php-fpm
 apt-get -y install nginx-full
-systemctl stop php8.2-fpm.service > /dev/null 2>&1
-## keep fpm disabled default -- useful for very high load web-server
-systemctl stop php.fpm  > /dev/null 2>&1
-#To enable PHP  FPM in Apache2 do:
+systemctl enable php8.2-fpm.service > /dev/null 2>&1
+systemctl enable apache2 > /dev/null 2>&1
 a2enmod proxy_fi setenvif
 a2enconf php8.2-fpm
 
