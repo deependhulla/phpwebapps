@@ -1,7 +1,6 @@
-# PHPWebApps
-- 
-- Debian 11 Based
-- PHP 8.2
+# casper-mail
+- Casper Mail
+- Debian11.4 Based Enterprise MailServer 
 - Postfix & Dovecot with 
 - MailScanner & MailWatch for Email-Tracking.
 - GroupOffice 6.6 Community Setup for Webbased Email-Access

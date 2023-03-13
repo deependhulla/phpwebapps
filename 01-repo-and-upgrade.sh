@@ -1,8 +1,10 @@
 #!/bin/bash
 
+
 ## set to India IST timezone -- You can dissable it if needed
 timedatectl set-timezone 'Asia/Kolkata'
 systemctl restart rsyslog 
+
 
 ##disable ipv6 as most time not required
 ## also while installation at time ipv6 is not ready at your setup
@@ -23,18 +25,7 @@ apt-get -y upgrade
 apt-get -y install vim curl git software-properties-common dirmngr screen mc apt-transport-https lsb-release ca-certificates openssh-server iptraf-ng telnet iputils-ping debconf-utils pwgen xfsprogs iftop htop multitail net-tools elinks wget pssh 
 
 
-##Add php 8.2 Repo
-wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
-apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
 
-echo "deb https://packages.sury.org/php/ bullseye main" > /etc/apt/sources.list.d/php.list
-echo "deb [arch=amd64] https://dlm.mariadb.com/repo/mariadb-server/10.11/repo/debian bullseye main" > /etc/apt/sources.list.d/mariadb.list
-echo "deb [arch=amd64] http://downloads.mariadb.com/Tools/debian bullseye main" >> /etc/apt/sources.list.d/mariadb.list
-
-apt-get update
-apt-get -y upgrade
-
-apt-get -y install mariadb-server php8.2
 ##### configure proper timezone
 #dpkg-reconfigure tzdata
 ##### configure locale proper
