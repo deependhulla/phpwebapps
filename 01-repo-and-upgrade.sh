@@ -24,7 +24,17 @@ apt-get -y upgrade
 ## few tools need for basic mangement
 apt-get -y install vim curl git software-properties-common dirmngr screen mc apt-transport-https lsb-release ca-certificates openssh-server iptraf-ng telnet iputils-ping debconf-utils pwgen xfsprogs iftop htop multitail net-tools elinks wget pssh 
 
+wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+apt-key adv --fetch-keys 'https://mariadb.org/mariadb_release_signing_key.asc'
 
+echo "deb https://packages.sury.org/php/ bullseye main" > /etc/apt/sources.list.d/php.list
+echo "deb [arch=amd64] https://dlm.mariadb.com/repo/mariadb-server/10.11/repo/debian bullseye main" > /etc/apt/sources.list.d/mariadb.list
+echo "deb [arch=amd64] http://downloads.mariadb.com/Tools/debian bullseye main" >> /etc/apt/sources.list.d/mariadb.list
+
+apt-get update
+apt-get -y upgrade
+
+apt-get -y install mariadb-server php8.2 php8.2-imagick php8.2-imap php8.2-intl php8.2-ldap php8.2-mailparse php8.2-mbstring php8.2-memcached php8.2-msgpack php8.2-mysql php8.2-xml php8.2-zip php8.2-bcmath php8.2-cli php8.2-common php8.2-curl php8.2-fpm php8.2-gd php8.2-opcache php8.2-readline php8.2-apcu 
 
 ##### configure proper timezone
 #dpkg-reconfigure tzdata
